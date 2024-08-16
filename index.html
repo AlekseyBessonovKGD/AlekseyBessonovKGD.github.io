@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="vew">
+    <div class="header">
+      <div class="hh">
+        <h2>специальные условия транспортировки и заполненность контейнера (текущая сессия доставки)</h2>
+      </div>
+      <div class="refregerator">
+        <div>реф</div>
+        <div>% от объема</div>
+        <div>% от веса</div>
+        <p> </p>
+        <div>тип контейнера</div>
+        <button>40ft</button>
+        <button>45ft</button>
+        <button>20ft</button>
+        <p> </p>
+        <button>сформировать</button>
+      </div>
+      <div class="danger">
+        <div>опасные грузы</div>
+        <div>% от объема</div>
+        <div>% от веса</div>
+        <p> </p>
+        <div>тип контейнера</div>
+        <button>40ft</button>
+        <button>45ft</button>
+        <button>20ft</button>
+        <p> </p>
+        <button>сформировать</button>
+      </div>
+      <div class="perishability">
+        <div>скоропорт</div>
+        <div>% от объема</div>
+        <div>% от веса</div>
+        <p> </p>
+        <div>тип контейнера</div>
+        <button>40ft</button>
+        <button>45ft</button>
+        <button>20ft</button>
+        <p> </p>
+        <button>сформировать</button>
+      </div>
+      <div class="other">
+        <div>без спец. условий</div>
+        <div>% от объема</div>
+        <div>% от веса</div>
+        <p> </p>
+        <div>тип контейнера</div>
+        <button>40ft</button>
+        <button>45ft</button>
+        <button>20ft</button>
+        <p> </p>
+        <button>сформировать</button>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div>
+        <button class="warehouse">склад</button>
+      </div>
+      <div>
+        <button class="calendar">календарь судов</button>
+      </div>
+      <div>
+        <button class="orders">текущие заявки</button>
+      </div>
+      <div>
+        <button class="orders_history">история заявок</button>
+      </div>
+      <div>
+        <button class="carriers">перевозчики</button>
+      </div>
+      <div>
+        <button class="customs">таможенный кабинет</button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="contentWarehouse hidden">
+        <h1>склад , информация по заполненности склада, так же по объему грузов в пути на склад</h1>
+      </div>
+      <div class="contentCalendar hidden">
+        <h1>календарь отправлений судов</h1>
+        <table border="1">
+
+          <tr>
+          
+          <th rowspan="2">город отправления</th>
+          <th rowspan="2">имя судна</th>
+          <th colspan="2">выход</th>
+          <th colspan="2">заход </th>
+          
+          </tr>
+          <tr>
+          
+            <th >дата</th>
+            <th>порт</th>
+            <th >дата</th>
+            <th>порт</th>
+            
+            </tr>
+          
+          <tr>
+          
+          <td>Калининград</td>
+          <td>судно А</td>
+          <td>25/08/24</td>
+          <td>КМТП</td>
+          <td>28/08/24</td>
+          <td>Усть-луга</td>
+          
+          </tr>
+          
+          <tr>
+          
+            <td>Калининград</td>
+            <td>судно Б</td>
+            <td>29/08/24</td>
+            <td>КМТП</td>
+            <td>02/09/24</td>
+            <td>Усть-луга</td>
+          
+          </tr>
+          <tr>
+          
+            <td>Санкт-Петербург</td>
+            <td>судно С</td>
+            <td>Усть-луга</td>
+            <td>26/08/24</td>
+            <td>КМТП</td>
+            <td>30/08/24</td>
+          
+          </tr>
+          <tr>
+          
+            <td>Санкт-Петербург</td>
+            <td>судно Д</td>
+            <td>Усть-луга</td>
+            <td>28/08/24</td>
+            <td>КМТП</td>
+            <td>02/09/24</td>
+          
+          </tr>
+          
+          </table>
+      </div>
+      <div class="contentOrders hidden">
+        <h1>заказы</h1>
+
+        <table border="1">
+
+          <tr>
+          
+          <th>имя заказчика</th>
+          <th>данные заказчика</th>
+          <th>адрес отправления</th>
+          <th>адрес назначения</th>
+          <th>данные товара</th>
+          <th>общий вес</th>
+          <th>общий объем</th>
+          <th>дата заказа</th>
+          <th>объявленная стоимость</th>
+          <th>откликнувшиеся перевозчики</th>
+          
+          </tr>
+          
+          <tr>
+          
+          <td>ИП Иванов И.И.</td>
+          <td><button>просмотреть</button></td>
+          <td><button>Москва</button></td>
+          <td><button>Калининград</button></td>
+          <td>телевизоры<button>просмотреть</button></td>
+          <td>1250 кг</td>
+          <td>3 м3</td>
+          <td>12/08/24</td>
+          <td>100р</td>
+          <td><button>показать</button></td>
+          
+          </tr>
+          
+          <tr>
+          
+            <td>ООО "Одежда"</td>
+            <td><button>просмотреть</button></td>
+            <td><button>Воронеж</button></td>
+            <td><button>Калининград</button></td>
+            <td>одежда<button>просмотреть</button></td>
+            <td>300 кг</td>
+            <td>5 м3</td>
+            <td>13/08/24</td>
+            <td>50р</td>
+            <td><button>показать</button></td>
+          
+          </tr>
+          
+          </table>
+          
+          
+
+        <!-- <form>
+          <label for="orders-select">имя заказчика</label>
+          <select name="_orders" id="_orders-select">
+            <option value="">-- Выберите заказчика --</option>
+            <option value="Cecil Ireland">Cecil Ireland</option>
+            <option value="Olga Svetlova">Olga Svetlova</option>
+            <option value="Artem Avergian">Artem Avergian</option>
+          </select>
+        </form> -->
+ <!--        <h3>данные заказа</h3> -->
+        <!-- <p>имя пользователя:</p><span class="userName"></span> -->
+        <!-- <p>адрес:</p><span class="adress"> </span> -->
+        <!-- <p>точка отправления:</p><span class="startPoint"> </span> -->
+        <!-- <p>точка назначения:</p><span class="endPoint"></span> -->
+        <!-- <p>юридические данные:</p><span class="userNameData"> </span> -->
+<!--         <p>объем груза, м3:</p><span class="value"> </span>
+        <p>вес груза, кг:</p><span class="weight"></span>
+        <p>габаритная длина, м:</p><span class="length"></span>
+        <p>габаритная высота, м:</p><span class="height"></span>
+        <p>габаритная ширина, м:</p><span class="width"></span>
+        <p>дата заказа:</p><span class="dateOfOrder"></span>
+        <p>стоимость, руб:</p><span class="price"></span> -->
+      </div>
+      <div class="contentOrdersHistory hidden">
+        <h1>История заказов</h1>
+        <h1>заказы</h1>
+
+        <table border="1">
+
+          <tr>
+          
+          <th>имя заказчика</th>
+          <th>данные заказчика</th>
+          <th>адрес отправления</th>
+          <th>адрес назначения</th>
+          <th>данные товара</th>
+          <th>общий вес</th>
+          <th>общий объем</th>
+          <th>дата заказа</th>
+          <th>объявленная стоимость</th>
+          <th>выполнил перевозку</th>
+          
+          </tr>
+          
+          <tr>
+          
+          <td>ИП Иванов И.И.</td>
+          <td><button>просмотреть</button></td>
+          <td><button>Москва</button></td>
+          <td><button>Калининград</button></td>
+          <td>телевизоры<button>просмотреть</button></td>
+          <td>1250 кг</td>
+          <td>3 м3</td>
+          <td>12/08/24</td>
+          <td>100р</td>
+          <td>ООО "Транспорт"</td>
+          
+          </tr>
+          
+          <tr>
+          
+            <td>ООО "Одежда"</td>
+            <td><button>просмотреть</button></td>
+            <td><button>Воронеж</button></td>
+            <td><button>Калининград</button></td>
+            <td>одежда<button>просмотреть</button></td>
+            <td>300 кг</td>
+            <td>5 м3</td>
+            <td>13/08/24</td>
+            <td>50р</td>
+            <td>ИП Петров П.П.</td>
+          
+          </tr>
+          
+          </table>
+      </div>
+      <div class="contentCarriers hidden">
+        <h1>Перевозчики</h1>
+        <table border="1">
+          <tr>
+            <th>имя</th>
+            <th>дата регистрации</th>
+            <th>выполненно заказов, шт</th>
+            <th>выполнено в срок,%</th>
+            <th>выполнено с проблемами,%</th>
+            <th>Проверить перевозчика</th>
+          </tr>
+          <tr>
+            <td>ИП Петров П.П.</td>
+            <td>25/01/24</td>
+            <td>10</td>
+            <td>90</td>
+            <td>1 <button>рекламации</button></td>
+            <td><button>проверить</button></td>
+          </tr>
+
+          <tr>
+            <td>ООО "Перевозка"</td>
+            <td>25/08/24</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0 <button>рекламации</button></td>
+            <td><button>проверить</button></td>
+          </tr>
+        </table>
+      </div>
+      <div class="contentCustoms hidden">
+        <h1>Таможнный кабинет</h1>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

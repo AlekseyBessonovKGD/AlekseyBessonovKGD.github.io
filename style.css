@@ -1,0 +1,66 @@
+.vew{./
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  grid-template-areas: "header header" 
+  "sidebar content"
+  }
+
+  .header {
+    grid-area: header;
+    background-color: rgb(158, 213, 229);
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 3fr;
+    grid-template-areas: "hh hh hh hh"
+    "refregerator danger perishability other "
+    }
+    
+    .hh {
+      grid-area: hh;
+      text-align : center;
+      background-color: rgb(158, 213, 229);
+    }
+    .refregerator {
+      grid-area: refregerator;
+      color: #000000;
+      font-size: 16px;
+      background-color: rgb(158, 213, 229);
+    }
+    
+    .danger {
+      grid-area: danger;
+      color: rgb(0, 0, 0);
+      font-size: 16px;
+      background-color: rgb(199, 176, 154);
+    }
+    
+    .perishability {
+      grid-area: perishability;
+      color: rgb(0, 0, 0);
+      font-size: 16px;
+      background-color: rgb(169, 198, 170);
+    }
+    
+    .other{
+      grid-area: other;
+      color: #ffffff;
+      font-size: 16px;
+      background-color: rgb(0, 0, 0);
+    }
+    
+    .sidebar{
+      grid-area: sidebar;
+      color: #ffffff;
+      font-size: 16px;
+      background-color: rgb(35, 0, 99);
+    }
+    
+    .content{
+      grid-area: content;
+      background: rgb(255, 255, 255);
+    }
+
+    .hidden {
+      display: none
+    }
