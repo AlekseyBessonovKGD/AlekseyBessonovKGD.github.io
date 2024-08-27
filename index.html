@@ -8,11 +8,42 @@
 </head>
 <body>
   <div class="vew">
+    <div class="b-popup hidden">
+      <div class="b-popup-content">
+        <table border="1">
+          <tr>
+            <th>отметить</th>
+            <th>Перевозчик</th>
+            <th>стоимость транспортировки, руб.</th>
+            <th>проверить перевозчика</th>
+          </tr>
+          <tr class="green">
+            <td><p><input type="checkbox" name="a"></p></td>
+            <td>ИП Петров П.П.</td>
+            <td>20,00</td>
+            <td><button>проверить</button></td>
+          </tr>
+          <tr>
+            <td><p><input type="checkbox" name="a"></p></td>
+            <td>ООО "Перевозка"</td>
+            <td>30,00</td>
+            <td><button>проверить</button></td>
+          </tr>
+          <tr>
+            <td><p><input type="checkbox" name="a"></p></td>
+            <td>ООО "Новенький"</td>
+            <td>40,00</td>
+            <td><button>проверить</button></td>
+          </tr>
+        </table>
+          <button class="hide_carrier">выбрать</button>
+      </div>
+  </div>
     <div class="header">
       <div class="hh">
-        <h2>специальные условия транспортировки и заполненность контейнера (текущая сессия доставки)</h2>
+        <h2>личный кабинет (логист)</h2>
       </div>
-      <div class="refregerator">
+<!--       <div class="refregerator">
         <div>реф</div>
         <div>% от объема</div>
         <div>% от веса</div>
@@ -23,8 +54,8 @@
         <button>20ft</button>
         <p> </p>
         <button>сформировать</button>
-      </div>
-      <div class="danger">
+      </div> -->
+<!--       <div class="danger">
         <div>опасные грузы</div>
         <div>% от объема</div>
         <div>% от веса</div>
@@ -35,8 +66,8 @@
         <button>20ft</button>
         <p> </p>
         <button>сформировать</button>
-      </div>
-      <div class="perishability">
+      </div> -->
+<!--       <div class="perishability">
         <div>скоропорт</div>
         <div>% от объема</div>
         <div>% от веса</div>
@@ -47,8 +78,8 @@
         <button>20ft</button>
         <p> </p>
         <button>сформировать</button>
-      </div>
-      <div class="other">
+      </div> -->
+<!--       <div class="other">
         <div>без спец. условий</div>
         <div>% от объема</div>
         <div>% от веса</div>
@@ -59,7 +90,7 @@
         <button>20ft</button>
         <p> </p>
         <button>сформировать</button>
-      </div>
+      </div> -->
     </div>
     <div class="sidebar">
       <div>
@@ -76,6 +107,9 @@
       </div>
       <div>
         <button class="carriers">перевозчики</button>
+      </div>
+      <div>
+        <button class="container">сформировать контейнер</button>
       </div>
       <div>
         <button class="customs">таможенный кабинет</button>
@@ -95,6 +129,7 @@
           <th rowspan="2">имя судна</th>
           <th colspan="2">выход</th>
           <th colspan="2">заход </th>
+          <th colspan="4">крайняя дата</th>
           
           </tr>
           <tr>
@@ -103,6 +138,10 @@
             <th>порт</th>
             <th >дата</th>
             <th>порт</th>
+            <th>сбор заказов</th>
+            <th>тендер перевозчиков</th>
+            <th>доставка на склад</th>
+            <th>доставка в порт отправки</th>
             
             </tr>
           
@@ -114,6 +153,10 @@
           <td>КМТП</td>
           <td>28/08/24</td>
           <td>Усть-луга</td>
+          <td>29/07/24</td>
+          <td>05/08/24</td>
+          <td>15/08/24</td>
+          <td>22/08/24</td>
           
           </tr>
           
@@ -125,26 +168,39 @@
             <td>КМТП</td>
             <td>02/09/24</td>
             <td>Усть-луга</td>
+            <td>03/08/24</td>
+            <td>09/08/24</td>
+            <td>19/08/24</td>
+            <td>26/08/24</td>
           
           </tr>
           <tr>
           
             <td>Санкт-Петербург</td>
             <td>судно С</td>
-            <td>Усть-луга</td>
             <td>26/08/24</td>
-            <td>КМТП</td>
+            <td>Усть-луга</td>
             <td>30/08/24</td>
+            <td>КМТП</td>
+            <td>30/07/24</td>
+            <td>06/08/24</td>
+            <td>16/08/24</td>
+            <td>23/08/24</td>
           
           </tr>
           <tr>
           
             <td>Санкт-Петербург</td>
             <td>судно Д</td>
-            <td>Усть-луга</td>
             <td>28/08/24</td>
-            <td>КМТП</td>
+            <td>Усть-луга</td>
             <td>02/09/24</td>
+            <td>КМТП</td>
+            <td>01/08/24</td>
+            <td>08/08/24</td>
+            <td>18/08/24</td>
+            <td>25/08/24</td>
+
           
           </tr>
           
@@ -162,6 +218,7 @@
           <th>адрес отправления</th>
           <th>адрес назначения</th>
           <th>данные товара</th>
+          <th>информация о упаковке 1 ед. товара</th>
           <th>общий вес</th>
           <th>общий объем</th>
           <th>дата заказа</th>
@@ -177,11 +234,12 @@
           <td><button>Москва</button></td>
           <td><button>Калининград</button></td>
           <td>телевизоры<button>просмотреть</button></td>
+          <td>картонная коробка, см 120Х15Х60 </td>
           <td>1250 кг</td>
           <td>3 м3</td>
           <td>12/08/24</td>
           <td>100р</td>
-          <td><button>показать</button></td>
+          <td><button class="show_carrier">показать</button></td>
           
           </tr>
           
@@ -192,11 +250,12 @@
             <td><button>Воронеж</button></td>
             <td><button>Калининград</button></td>
             <td>одежда<button>просмотреть</button></td>
+            <td>пакет целофановый,см 50Х30Х60</td>
             <td>300 кг</td>
             <td>5 м3</td>
             <td>13/08/24</td>
             <td>50р</td>
-            <td><button>показать</button></td>
+            <td><button class="show_carrier">показать</button></td>
           
           </tr>
           
@@ -240,6 +299,7 @@
           <th>адрес отправления</th>
           <th>адрес назначения</th>
           <th>данные товара</th>
+          <th>информация о упаковке 1 ед. товара</th>
           <th>общий вес</th>
           <th>общий объем</th>
           <th>дата заказа</th>
@@ -255,6 +315,7 @@
           <td><button>Москва</button></td>
           <td><button>Калининград</button></td>
           <td>телевизоры<button>просмотреть</button></td>
+          <td>картонная коробка, см 120Х15Х60 </td>
           <td>1250 кг</td>
           <td>3 м3</td>
           <td>12/08/24</td>
@@ -270,6 +331,7 @@
             <td><button>Воронеж</button></td>
             <td><button>Калининград</button></td>
             <td>одежда<button>просмотреть</button></td>
+            <td>пакет целофановый,см 50Х30Х60</td>
             <td>300 кг</td>
             <td>5 м3</td>
             <td>13/08/24</td>
@@ -309,6 +371,9 @@
             <td><button>проверить</button></td>
           </tr>
         </table>
+      </div>
+      <div class="contentContainer hidden">
+        <h1>Сформировать контейнер</h1>
       </div>
       <div class="contentCustoms hidden">
         <h1>Таможнный кабинет</h1>

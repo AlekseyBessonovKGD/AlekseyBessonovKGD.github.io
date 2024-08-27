@@ -7,12 +7,19 @@ const calendarBtn = document.querySelector(".calendar");
 const OrderHistoryBtn = document.querySelector(".orders_history");
 const CarriersBtn = document.querySelector(".carriers");
 const CustomsBtn = document.querySelector(".customs");
+const containerBnt = document.querySelector(".container");
 const contentOrders = document.querySelector(".contentOrders");
 const contentWarehouse = document.querySelector(".contentWarehouse");
 const contentCalendar = document.querySelector(".contentCalendar");
 const contentOrderHistory = document.querySelector(".contentOrdersHistory");
 const contentCarriers = document.querySelector(".contentCarriers");
 const contentCustoms = document.querySelector(".contentCustoms");
+const contentContainer = document.querySelector(".contentContainer");
+
+//popup
+const showCarriersBtn = document.querySelectorAll(".show_carrier");
+const hide_carrierBtn = document.querySelector(".hide_carrier");
+const b_popup = document.querySelector(".b-popup");
 
 //выбор элементов заказы
 /* const orderName = document.querySelector("#_orders-select");
@@ -103,6 +110,7 @@ ordersBtn.addEventListener("click", function (e) {
   contentOrderHistory.classList.add("hidden");
   contentCarriers.classList.add("hidden");
   contentCustoms.classList.add("hidden");
+  contentContainer.classList.add("hidden");
 });
 
 warehouseBtn.addEventListener("click", function (e) {
@@ -113,6 +121,7 @@ warehouseBtn.addEventListener("click", function (e) {
   contentOrderHistory.classList.add("hidden");
   contentCarriers.classList.add("hidden");
   contentCustoms.classList.add("hidden");
+  contentContainer.classList.add("hidden");
 });
 
 calendarBtn.addEventListener("click", function (e) {
@@ -123,6 +132,7 @@ calendarBtn.addEventListener("click", function (e) {
   contentOrderHistory.classList.add("hidden");
   contentCarriers.classList.add("hidden");
   contentCustoms.classList.add("hidden");
+  contentContainer.classList.add("hidden");
 });
 
 OrderHistoryBtn.addEventListener("click", function (e) {
@@ -133,6 +143,7 @@ OrderHistoryBtn.addEventListener("click", function (e) {
   contentOrderHistory.classList.remove("hidden");
   contentCarriers.classList.add("hidden");
   contentCustoms.classList.add("hidden");
+  contentContainer.classList.add("hidden");
 });
 
 CarriersBtn.addEventListener("click", function (e) {
@@ -143,9 +154,11 @@ CarriersBtn.addEventListener("click", function (e) {
   contentOrderHistory.classList.add("hidden");
   contentCarriers.classList.remove("hidden");
   contentCustoms.classList.add("hidden");
+  contentContainer.classList.add("hidden");
 });
 
 CustomsBtn.addEventListener("click", function (e) {
+  contentCustoms;
   e.preventDefault();
   contentOrders.classList.add("hidden");
   contentWarehouse.classList.add("hidden");
@@ -153,4 +166,29 @@ CustomsBtn.addEventListener("click", function (e) {
   contentOrderHistory.classList.add("hidden");
   contentCarriers.classList.add("hidden");
   contentCustoms.classList.remove("hidden");
+  contentContainer.classList.add("hidden");
+});
+
+containerBnt.addEventListener("click", function (e) {
+  contentCustoms;
+  e.preventDefault();
+  contentOrders.classList.add("hidden");
+  contentWarehouse.classList.add("hidden");
+  contentCalendar.classList.add("hidden");
+  contentOrderHistory.classList.add("hidden");
+  contentCarriers.classList.add("hidden");
+  contentCustoms.classList.add("hidden");
+  contentContainer.classList.remove("hidden");
+});
+
+//button logic
+
+showCarriersBtn.forEach((element) =>
+  element.addEventListener("click", function (e) {
+    b_popup.classList.remove("hidden");
+  })
+);
+
+hide_carrierBtn.addEventListener("click", function (e) {
+  b_popup.classList.add("hidden");
 });
