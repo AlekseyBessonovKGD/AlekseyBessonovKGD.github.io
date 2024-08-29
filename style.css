@@ -44,9 +44,11 @@
     
     .other{
       grid-area: other;
+      padding-left: 70%;
+      padding-bottom: 5%;
       color: #ffffff;
       font-size: 16px;
-      background-color: rgb(0, 0, 0);
+      background-color: rgb(158, 213, 229);
     }
     
     .sidebar{
@@ -65,16 +67,6 @@
       display: none
     }
 
-
-/*   .b-container{
-      width:200px;
-      height:150px;
-      background-color: #ccc;
-      margin:0px auto;
-      padding:10px;
-      font-size:30px;
-      color: #fff;
-  } */
   .b-popup{
       width:100%;
       min-height:100%;
@@ -93,6 +85,95 @@
       box-shadow: 0px 0px 10px #000;
   }
 
+  .a-popup{
+    width:100%;
+    min-height:100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+}
+.a-popup .a-popup-content{
+    margin:40px auto 0px auto;
+    width:1000px;
+    height: 400px;
+    padding:10px;
+    background-color: #c5c5c5;
+    border-radius:5px;
+    box-shadow: 0px 0px 10px #000;
+}
+
   .green{
     color: green;
   }
+
+  .contentProfil{
+    margin-left: 1%;
+  }
+
+  .contentCalendar{
+    margin-left: 1%;
+  }
+
+  .contentOrders{
+    margin-left: 1%;
+  }
+
+  .contentOrdersHistory{
+    margin-left: 1%;
+  }
+
+  .contentCarriers{
+    margin-left: 1%;
+  }
+
+  .contentContainer{
+    margin-left: 1%;
+  }
+
+  .contentCustoms{
+    margin-left: 1%;
+  }
+
+  .contentWarehouse{
+    margin-left: 1%;
+  }
+
+.chart {
+  background: 
+    conic-gradient(
+      red 10%, 
+      gray 0 15%, 
+      blue 0 25%,
+      purple 0 35%,
+      orange 0 
+    );
+  border-radius: 50%;
+  width: 10%;
+  height: 0;
+  padding-top: 10%;
+  float: left;
+  padding-right: 20px;
+}
+
+.key{
+  margin-left: 15%
+}
+
+.chartGoods {
+  background: 
+    conic-gradient(
+      red 80%, 
+      blue 0
+    );
+  border-radius: 50%;
+  width: 10%;
+  height: 0%;
+  padding-top: 10%;
+  float: left;
+  padding-right: 20px;
+}
+
+.tipeGoods {
+  margin-left: 15%;
+}
