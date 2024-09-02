@@ -8,6 +8,37 @@
 </head>
 <body>
   <div class="vew">
+    <div class="carries-info-popup hidden">
+      <div class="carries-info-popup-content">
+        <table border="1">
+          <tr>
+            <th>перевозка до склада</th>
+            <th>даты перевозки</th>
+            <th>название склада</th>
+            <th>перевозка до порта</th>
+            <th>даты перевозки</th>
+            <th>название порта</th>
+            <th>название судна</th>
+            <th>даты перевозки</th>
+            <th>перевозка до заказчика</th>
+            <th>даты перевозки</th>
+          </tr>
+          <tr>
+            <td>ИП Орлов А.А.</td>
+            <td>25/05/23 - 29/05/23</td>
+            <td>ИП Иванов</td>
+            <td>ИП Петров</td>
+            <td>04/06/23 - 06/06/23</td>
+            <td>Усть-луга</td>
+            <td>Судно Б</td>
+            <td>08/06/23 - 09/06/23</td>
+            <td>ИП Сидоров</td>
+            <td>10/06/23 - 11/06/23</td>
+          </tr>
+        </table>
+          <button class="hide_info">закрыть</button>
+      </div>
+    </div>
     <div class="b-popup hidden">
       <div class="b-popup-content">
         <table border="1">
@@ -47,12 +78,16 @@
           <th>наименование товара</th>
           <th>тип рекламации</th>
           <th>примечание</th>
+          <th>загрузить акт</th>
         </tr>
         <tr>
           <td>25/03/22</td>
           <td>сок в тетрапаках</td>
           <td>повереждена упаковка</td>
           <td><input type="text"></td>
+          <td>
+            <input type="file" name="problemPdf" accept="pdf" />
+          </td>
         </tr>
       </table>
         <button class="hide_problems">закрыть</button>
@@ -136,46 +171,57 @@
     </div>
     <div class="content">
       <div class="contentWarehouse hidden">
-        <h1>склад , информация по заполненности склада</h1>
-        <div class="chart"></div>
-<ul class="key">
+        <h2>Склад: ИП Иванов И.И. , адрес - г.Москва пр-т мира 1, т 555-555,</h2>
+        <p>
+          <a href="contract.pdf" class="button"><i class="fa fa-download"></i>загрузить договор</a>
+        </p>
+        <h3 style="padding: 1%;">Информация по заполненности склада</h3>
+<div style="padding: 1%;">
+  <div class="chart"></div>
+  <ul class="chartFillWarehouse">
   <li>
-    <strong class="percent red" style="color: red;">10%</strong>
-    <span class="choice">в пути на склад</span>
+    <strong class="percent red" style="color: red;">3м2</strong>
+    <span class="choice">в пути на склад (10%)</span>
   </li>
   <li>
-    <strong class="percent gray" style="color: gray;">5%</strong>
-    <span class="choice">быт. техника</span>
+    <strong class="percent blue" style="color: blue;">8м2</strong>
+    <span class="choice">на складе (25%)</span>
+  </li>
+    <strong class="percent orange" style="color: orange;">21м2</strong>
+    <span class="choice">свободно (65%)</span>
+  </li>
+  </ul>
+</div>
+  <h3 style="padding: 1%;">Распределение по типам упаковки груза на складе</h3>
+<div style="padding: 1%;">
+  <div class="chartGoods"></div>
+  <ul class="tipeGoods">
+  <li>
+    <strong class="percent red" style="color: red;">6т</strong>
+    <span class="choice">картонная коробка (95%)</span>
   </li>
   <li>
-    <strong class="percent blue" style="color: blue;">10%</strong>
-    <span class="choice">алкоголь</span>
+    <strong class="percent blue" style="color: blue;">0,3т</strong>
+    <span class="choice">целофановый пакет (5%)</span>
+  </li>
+  </ul>
+</div>
+<div>
+  <h3 style="padding: 3%;">Распределение по количеству</h3>
+</div>
+<div style="padding: 1%;">
+  <div class="chartCounts"></div>
+  <ul class="tipeGoods">
+  <li>
+    <strong class="percent red" style="color: violet;">800шт</strong>
+    <span class="choice">картонная коробка (76%)</span>
   </li>
   <li>
-    <strong class="percent purple" style="color: purple;">10%</strong>
-    <span class="choice">одежда</span>
+    <strong class="percent blue" style="color: green;">250шт</strong>
+    <span class="choice">целофановый пакет (24%)</span>
   </li>
-  <li>
-    <strong class="percent orange" style="color: orange;">65%</strong>
-    <span class="choice">свободно</span>
-  </li>
-</ul>
-
-<h1 style="padding: 1%;">Распределение по типам упаковки груза на складе</h1>
-
-<div class="chartGoods"></div>
-
-<ul class="tipeGoods">
-  <li>
-    <strong class="percent red" style="color: red;">80%</strong>
-    <span class="choice">картонная коробка</span>
-  </li>
-  <li>
-    <strong class="percent blue" style="color: blue;">20%</strong>
-    <span class="choice">целофановый пакет</span>
-  </li>
-</ul>
-
+  </ul>
+</div>
 <!--         <table border="1">
           <tr>
             <th rowspan="2">наименование секции</th>
@@ -219,20 +265,36 @@
 
           <tr>
           
-          <th>имя заказчика</th>
-          <th>данные заказчика</th>
-          <th>адрес отправления</th>
-          <th>адрес назначения</th>
-          <th>данные товара</th>
-          <th>информация о упаковке 1 ед. товара</th>
-          <th>возможность складывать в штабель</th>
-          <th>тип груза</th>
-          <th>общий вес</th>
-          <th>общий объем</th>
-          <th>дата поступления на склад</th>
-          <th>объявленная стоимость</th>
-          <th>выполнил перевозку до склада</th>
+            <th rowspan="2">имя заказчика</th>
+            <th rowspan="2">данные заказчика</th>
+            <th rowspan="2">адрес отправления</th>
+            <th rowspan="2">адрес назначения</th>
+            <th rowspan="2">данные товара</th>
+            <th colspan="2">информация о упаковке 1 ед. товара</th>
+            <th rowspan="2">общее количество, шт</th>
+            <th rowspan="2">возможность складывать в штабель</th>
+            <th rowspan="2">тип груза</th>
+            <th rowspan="2">общий вес, т</th>
+            <th rowspan="2">общий объем, м3</th>
+            <th rowspan="2">дата выполнения заказа</th>
+            <th rowspan="2">объявленная стоимость, р</th>
+            <th rowspan="2">выполнил перевозку</th>
           
+          </tr>
+
+          <tr>
+            <th>тип</th>
+            <th>размер, м</th>
+          </tr> 
+
+          <tr>
+            <th colspan="7">Итого:</th>
+            <th>1050</th>
+            <th colspan="2"></th>
+            <th>6.3</th>
+            <th>12.5</th>
+            <th></th>
+            <th>1550</th>
           </tr>
           
           <tr>
@@ -242,13 +304,15 @@
           <td><button>Москва</button></td>
           <td><button>Калининград</button></td>
           <td>микроволновые печи<button>просмотреть</button></td>
-          <td>картонная коробка, м 0.1Х0.35Х0.2 </td>
+          <td>картонная коробка  </td>
+          <td>0.1Х0.35Х0.2</td>
+          <td>350</td>
           <td>да</td>
           <td>быт. техника</td>
-          <td>1 т</td>
-          <td>2,5 м3</td>
+          <td>1</td>
+          <td>2,5</td>
           <td>25/08/24</td>
-          <td>1000р</td>
+          <td>1000</td>
           <td>ООО "Транспорт"</td>
           
           </tr>
@@ -260,13 +324,15 @@
             <td><button>Воронеж</button></td>
             <td><button>Калининград</button></td>
             <td>штаны<button>просмотреть</button></td>
-            <td>пакет целофановый,м 0.5Х0.3Х0.6</td>
+            <td>пакет целофановый</td>
+            <td>0.5Х0.3Х0.6</td>
+            <td>250</td>
             <td>да</td>
             <td>одежда</td>
-            <td>0.3 т </td>
-            <td>5 м3</td>
+            <td>0.3</td>
+            <td>5</td>
             <td>13/08/24</td>
-            <td>50р</td>
+            <td>50</td>
             <td>ИП Петров П.П.</td>
           
           </tr>
@@ -278,13 +344,15 @@
             <td><button style="color: red;">Иркутск</button></td>
             <td><button style="color: red;">Калининград</button></td>
             <td style="color: red;">водка<button style="color: red;">просмотреть</button></td>
-            <td style="color: red;">картонная коробка,м 0.4Х0.3Х0.2</td>
+            <td style="color: red;">картонная коробка</td>
+            <td style="color: red;">0.4Х0.3Х0.2</td>
+            <td style="color: red;">450</td>           
             <td style="color: red;">да</td>
             <td style="color: red;">алкоголь</td>
-            <td style="color: red;">5 т </td>
-            <td style="color: red;">5 м3</td>
+            <td style="color: red;">5</td>
+            <td style="color: red;">5</td>
             <td style="color: red;">13/06/24</td>
-            <td style="color: red;">500р</td>
+            <td style="color: red;">500</td>
             <td style="color: red;">ИП Иванов И.И.</td>
           
           </tr>
@@ -297,22 +365,39 @@
 
           <tr>
           
-          <th>имя заказчика</th>
-          <th>данные заказчика</th>
-          <th>адрес отправления</th>
-          <th>адрес назначения</th>
-          <th>данные товара</th>
-          <th>информация о упаковке 1 ед. товара</th>
-          <th>возможность складывать в штабель</th>
-          <th>тип груза</th>
-          <th>общий вес</th>
-          <th>общий объем</th>
-          <th>дата выполнения заказа</th>
-          <th>объявленная стоимость</th>
-          <th>выполнил перевозку</th>
+          <th rowspan="2">имя заказчика</th>
+          <th rowspan="2">данные заказчика</th>
+          <th rowspan="2">адрес отправления</th>
+          <th rowspan="2">адрес назначения</th>
+          <th rowspan="2">данные товара</th>
+          <th colspan="2">информация о упаковке 1 ед. товара</th>
+          <th rowspan="2">общее количество, шт</th>
+          <th rowspan="2">возможность складывать в штабель</th>
+          <th rowspan="2">тип груза</th>
+          <th rowspan="2">общий вес</th>
+          <th rowspan="2">общий объем</th>
+          <th rowspan="2">дата выполнения заказа</th>
+          <th rowspan="2">объявленная стоимость</th>
+          <th rowspan="2">выполнил перевозку</th>
           
-          </tr>         
+          </tr>  
+
+          <tr>
+            <th>тип</th>
+            <th>размер, м</th>
+          </tr>     
           
+
+          <tr>
+            <th colspan="7">Итого:</th>
+            <th>350</th>
+            <th colspan="2"></th>
+            <th>0.3</th>
+            <th>5</th>
+            <th></th>
+            <th>50</th>
+          </tr>
+
           <tr>
           
             <td>ООО "Одежда"</td>
@@ -320,13 +405,15 @@
             <td><button>Воронеж</button></td>
             <td><button>Калининград</button></td>
             <td>куртки<button>просмотреть</button></td>
-            <td>пакет целофановый,м 0.5Х0.3Х0.6</td>
+            <td>пакет целофановый</td>
+            <td>0.5Х0.3Х0.6</td>
+            <td>350</td>
             <td>да</td>
             <td>одежда</td>
             <td>0.3 т </td>
-            <td>5 м3</td>
+            <td>5</td>
             <td>13/05/24</td>
-            <td>50р</td>
+            <td>50</td>
             <td>ИП Петров П.П.</td>
           
           </tr>
@@ -350,8 +437,10 @@
           
           <th rowspan="2">город отправления</th>
           <th rowspan="2">имя судна</th>
-          <th colspan="2">выход</th>
-          <th colspan="2">заход </th>
+          <th rowspan="2">владелец судна</th>
+          <th rowspan="2">агент(фрахтователь)</th>
+          <th colspan="3">выход</th>
+          <th colspan="3">заход </th>
           <th colspan="4">крайняя дата</th>
           
           </tr>
@@ -359,8 +448,10 @@
           
             <th >дата</th>
             <th>порт</th>
+            <th>терминал</th>
             <th >дата</th>
             <th>порт</th>
+            <th>терминал</th>
             <th>сбор заказов</th>
             <th>тендер перевозчиков</th>
             <th>доставка на склад</th>
@@ -372,10 +463,14 @@
           
           <td>Калининград</td>
           <td>судно А</td>
+          <td>ИП Иванов И.И.</td>
+          <td>ООО Иванов</td>
           <td>25/08/24</td>
           <td>КМТП</td>
+          <td></td>
           <td>28/08/24</td>
           <td>Усть-луга</td>
+          <td></td>
           <td>29/07/24</td>
           <td>05/08/24</td>
           <td>20/08/24</td>
@@ -387,10 +482,14 @@
           
             <td>Калининград</td>
             <td>судно Б</td>
+            <td>ИП Иванов И.И.</td>
+            <td>ООО Иванов</td>
             <td>29/08/24</td>
             <td>КМТП</td>
+            <td></td>
             <td>02/09/24</td>
             <td>Усть-луга</td>
+            <td></td>
             <td>03/08/24</td>
             <td>09/08/24</td>
             <td>24/08/24</td>
@@ -401,10 +500,14 @@
           
             <td>Санкт-Петербург</td>
             <td>судно С</td>
+            <td>ИП Иванов И.И.</td>
+            <td>ООО Иванов</td>
             <td>26/08/24</td>
             <td>Усть-луга</td>
+            <td></td>
             <td>30/08/24</td>
             <td>КМТП</td>
+            <td></td>
             <td>30/07/24</td>
             <td>06/08/24</td>
             <td>21/08/24</td>
@@ -415,10 +518,14 @@
           
             <td>Санкт-Петербург</td>
             <td>судно Д</td>
+            <td>ИП Иванов И.И.</td>
+            <td>ООО Иванов</td>
             <td>28/08/24</td>
             <td>Усть-луга</td>
+            <td></td>
             <td>02/09/24</td>
             <td>КМТП</td>
+            <td></td>
             <td>01/08/24</td>
             <td>08/08/24</td>
             <td>23/08/24</td>
@@ -433,22 +540,38 @@
         <h1>заказы</h1>
 
         <table border="1">
-
           <tr>
           
-          <th>имя заказчика</th>
-          <th>данные заказчика</th>
-          <th>адрес отправления</th>
-          <th>адрес назначения</th>
-          <th>данные товара</th>
-          <th>информация о упаковке 1 ед. товара</th>
-          <th>возможность складывать в штабель</th>
-          <th>общий вес</th>
-          <th>общий объем</th>
-          <th>дата заказа</th>
-          <th>объявленная стоимость</th>
-          <th>откликнувшиеся перевозчики</th>
+            <th rowspan="2">имя заказчика</th>
+            <th rowspan="2">данные заказчика</th>
+            <th rowspan="2">адрес отправления</th>
+            <th rowspan="2">адрес назначения</th>
+            <th rowspan="2">данные товара</th>
+            <th colspan="2">информация о упаковке 1 ед. товара</th>
+            <th rowspan="2">общее количество, шт</th>
+            <th rowspan="2">возможность складывать в штабель</th>
+            <th rowspan="2">тип груза</th>
+            <th rowspan="2">общий вес, т</th>
+            <th rowspan="2">общий объем, м3</th>
+            <th rowspan="2">дата выполнения заказа</th>
+            <th rowspan="2">объявленная стоимость, р</th>
+            <th rowspan="2">откликнувшиеся перевозчики</th>
           
+          </tr>
+
+          <tr>
+            <th>тип</th>
+            <th>размер, м</th>
+          </tr> 
+
+          <tr>
+            <th colspan="7">Итого:</th>
+            <th>1050</th>
+            <th colspan="2"></th>
+            <th>6.3</th>
+            <th>12.5</th>
+            <th></th>
+            <th>1550</th>
           </tr>
           
           <tr>
@@ -458,8 +581,11 @@
           <td><button>Москва</button></td>
           <td><button>Калининград</button></td>
           <td>телевизоры<button>просмотреть</button></td>
-          <td>картонная коробка, м 0.12Х0.15Х0.6 </td>
+          <td>картонная коробка</td>
+          <td>0.12Х0.15Х0.6</td>
+          <td>700</td>
           <td>да</td>
+          <td>быт. техника</td>
           <td>1.250 т</td>
           <td>3 м3</td>
           <td>12/08/24</td>
@@ -474,9 +600,12 @@
             <td><button>просмотреть</button></td>
             <td><button>Воронеж</button></td>
             <td><button>Калининград</button></td>
-            <td>одежда<button>просмотреть</button></td>
-            <td>пакет целофановый,м 0.5Х0.3Х0.6</td>
+            <td>пиджаки<button>просмотреть</button></td>
+            <td>пакет целофановый</td>
+            <td>0.5Х0.3Х0.6</td>
+            <td>1200</td>
             <td>да</td>
+            <td>одежда</td>
             <td>0.3 т </td>
             <td>5 м3</td>
             <td>13/08/24</td>
@@ -486,9 +615,7 @@
           </tr>
           
           </table>
-          
-          
-
+  
         <!-- <form>
           <label for="orders-select">имя заказчика</label>
           <select name="_orders" id="_orders-select">
@@ -516,60 +643,82 @@
         <h1>История заказов</h1>
         <h1>заказы</h1>
 
-        <table border="1">
-
-          <tr>
-          
-          <th>имя заказчика</th>
-          <th>данные заказчика</th>
-          <th>адрес отправления</th>
-          <th>адрес назначения</th>
-          <th>данные товара</th>
-          <th>информация о упаковке 1 ед. товара</th>
-          <th>возможность складывать в штабель</th>
-          <th>общий вес</th>
-          <th>общий объем</th>
-          <th>дата выполнения заказа</th>
-          <th>объявленная стоимость</th>
-          <th>выполнил перевозку</th>
-          
-          </tr>
-          
-          <tr>
-          
-          <td>ИП Иванов И.И.</td>
-          <td><button>просмотреть</button></td>
-          <td><button>Москва</button></td>
-          <td><button>Калининград</button></td>
-          <td>телевизоры<button>просмотреть</button></td>
-          <td>картонная коробка, м 0.12Х0.15Х0.6 </td>
-          <td>да</td>
-          <td>1.250 т</td>
-          <td>3 м3</td>
-          <td>12/05/24</td>
-          <td>100р</td>
-          <td>ООО "Транспорт"</td>
-          
-          </tr>
-          
-          <tr>
-          
-            <td>ООО "Одежда"</td>
+          <table border="1">
+            <tr>
+            
+              <th rowspan="2">имя заказчика</th>
+              <th rowspan="2">данные заказчика</th>
+              <th rowspan="2">адрес отправления</th>
+              <th rowspan="2">адрес назначения</th>
+              <th rowspan="2">данные товара</th>
+              <th colspan="2">информация о упаковке 1 ед. товара</th>
+              <th rowspan="2">общее количество, шт</th>
+              <th rowspan="2">возможность складывать в штабель</th>
+              <th rowspan="2">тип груза</th>
+              <th rowspan="2">общий вес, т</th>
+              <th rowspan="2">общий объем, м3</th>
+              <th rowspan="2">дата выполнения заказа</th>
+              <th rowspan="2">объявленная стоимость, р</th>
+              <th rowspan="2">информация о доставке</th>
+            
+            </tr>
+  
+            <tr>
+              <th>тип</th>
+              <th>размер, м</th>
+            </tr> 
+  
+            <tr>
+              <th colspan="7">Итого:</th>
+              <th>1050</th>
+              <th colspan="2"></th>
+              <th>6.3</th>
+              <th>12.5</th>
+              <th></th>
+              <th>1550</th>
+            </tr>
+            
+            <tr>
+            
+            <td>ИП Иванов И.И.</td>
             <td><button>просмотреть</button></td>
-            <td><button>Воронеж</button></td>
+            <td><button>Москва</button></td>
             <td><button>Калининград</button></td>
-            <td>одежда<button>просмотреть</button></td>
-            <td>пакет целофановый,м 0.5Х0.3Х0.6</td>
+            <td>телевизоры<button>просмотреть</button></td>
+            <td>картонная коробка</td>
+            <td>0.12Х0.15Х0.6</td>
+            <td>700</td>
             <td>да</td>
-            <td>0.3 т </td>
-            <td>5 м3</td>
-            <td>13/05/24</td>
-            <td>50р</td>
-            <td>ИП Петров П.П.</td>
-          
-          </tr>
-          
-          </table>
+            <td>быт. техника</td>
+            <td>1.250 т</td>
+            <td>3 м3</td>
+            <td>12/05/24</td>
+            <td>100р</td>
+            <td><button class="show_info">показать</button></td>
+            
+            </tr>
+            
+            <tr>
+            
+              <td>ООО "Одежда"</td>
+              <td><button>просмотреть</button></td>
+              <td><button>Воронеж</button></td>
+              <td><button>Калининград</button></td>
+              <td>пиджаки<button>просмотреть</button></td>
+              <td>пакет целофановый</td>
+              <td>0.5Х0.3Х0.6</td>
+              <td>1200</td>
+              <td>да</td>
+              <td>одежда</td>
+              <td>0.3 т </td>
+              <td>5 м3</td>
+              <td>13/05/24</td>
+              <td>50р</td>
+              <td><button class="show_info">показать</button></td>
+            
+            </tr>
+            
+            </table>
       </div>
       <div class="contentCarriers hidden">
         <h1>Перевозчики</h1>
@@ -610,6 +759,15 @@
       </div>
       <div class="contentCustoms hidden">
         <h1>оформление сопутствующей документации</h1>
+        <div>
+          <button>Ветиренарное/фитосанитарное оформление</button>
+        </div>
+        <div>
+          <button>таможенный кабинет</button>
+        </div>
+        <div>
+          <button>...оформление прочей документации</button>
+        </div>
       </div>
     </div>
   </div>

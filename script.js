@@ -17,7 +17,9 @@ const contentCarriers = document.querySelector(".contentCarriers");
 const contentCustoms = document.querySelector(".contentCustoms");
 const contentContainer = document.querySelector(".contentContainer");
 const contentProfil = document.querySelector(".contentProfil");
+
 //popup
+
 const showCarriersBtn = document.querySelectorAll(".show_carrier");
 const hide_carrierBtn = document.querySelector(".hide_carrier");
 const b_popup = document.querySelector(".b-popup");
@@ -25,6 +27,10 @@ const b_popup = document.querySelector(".b-popup");
 const showProblemsBtn = document.querySelectorAll(".show_problems");
 const hide_problemsBtn = document.querySelector(".hide_problems");
 const a_popup = document.querySelector(".a-popup");
+
+const showInfoBtn = document.querySelectorAll(".show_info");
+const hide_InfoBtn = document.querySelector(".hide_info");
+const carriesInfoPopup = document.querySelector(".carries-info-popup");
 
 //выбор элементов заказы
 /* const orderName = document.querySelector("#_orders-select");
@@ -224,4 +230,14 @@ showProblemsBtn.forEach((element) =>
 
 hide_problemsBtn.addEventListener("click", function (e) {
   a_popup.classList.add("hidden");
+});
+
+showInfoBtn.forEach((element) =>
+  element.addEventListener("click", function (e) {
+    carriesInfoPopup.classList.remove("hidden");
+  })
+);
+
+hide_InfoBtn.addEventListener("click", function (e) {
+  carriesInfoPopup.classList.add("hidden");
 });
