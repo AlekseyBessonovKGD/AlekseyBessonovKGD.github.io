@@ -168,6 +168,9 @@
       <div>
         <button class="customs">оформление сопутствующей документации</button>
       </div>
+      <div>
+        <button class="monitoring">мониторинг</button>
+      </div>
     </div>
     <div class="content">
       <div class="contentWarehouse hidden">
@@ -768,6 +771,102 @@
         <div>
           <button>...оформление прочей документации</button>
         </div>
+      </div>
+      <div class="contentMonitoring hidden">
+           <h2>мониторинг этапов доставки заказа</h2>
+           <h4>развернутая таблица этапов обработки (ниже заголовков указаны возможные статусы)</h4>
+           <table border="1">
+            <tr>
+              <th>id</th>
+              <th>размещение заявки</th>
+              <th>тендер доставки до склада</th>
+              <th>выбор перевозщиков</th>
+              <th>обратная связь от клиента</th>
+              <th>оплата</th>
+              <th>заключение необходимых договоров, оформление документации</th>
+              <th>этап транспортировки</th>
+              <th>тайминг</th>
+            </tr>
+
+            <tr>
+              <td>250257</td>
+              <td>
+                <p style="color: green;">размещена</p>
+                <p style="color: red;">не размещена</p>
+              </td>
+              <td>
+                <p style="color: green;">объявлен</p>
+                <p style="color: red;">объявлен</p>
+                <p style="color: green;">сбор предлжений</p>
+                <p style="color: green;">доставщик выбран</p>
+                <p style="color: red;">предложений не поступило</p>
+                <p style="color: red;">доставщик не выбран</p>
+              </td>
+              <td>
+                <p style="color: green;">грузоотправитель-склад</p>
+                <p style="color: red;">грузоотправитель-склад</p>
+                <p style="color: green;">склад-порт</p>
+                <p style="color: red;">склад-порт</p>
+                <p style="color: green;">порт-порт</p>
+                <p style="color: red;">порт-порт</p>
+                <p style="color: green;">порт-заказчик</p>
+                <p style="color: red;">порт-заказчик</p>
+              </td>
+              <td>
+                <p style="color: red;">предложение отклонено</p>
+                <p style="color: green;">предложение подтверждено</p>
+                <p style="color: blue;">ожидание решения</p>
+              </td>
+              <td>
+                <p style="color: green;">50% оплата</p>
+                <p style="color: red;">50% оплата</p>
+                <p style="color: green;">100% оплата</p>
+                <p style="color: red;">100% оплата</p>
+                <p style="color: blue;">ожидание оплаты</p>
+              </td>
+              <td>
+                <p style="color: green;">договор доставки до склада</p>
+                <p style="color: red;">договор доставки до склада</p>
+                <p style="color: green;">договор хранения на складе</p>
+                <p style="color: red;">договор хранения на складе</p>
+                <p style="color: green;">договор доставки до порта</p>
+                <p style="color: red;">договор доставки до порта</p>
+                <p style="color: green;">договор доставки порт-порт</p>
+                <p style="color: red;">договор доставки порт-порт</p>
+                <p style="color: green;">договор доставки порт-заказчик</p>
+                <p style="color: red;">договор доставки порт-заказчик</p>
+                <p style="color: green;">договор страхования</p>
+                <p style="color: red;">договор страхования</p>
+                <p style="color: green;">сопроводительная документация</p>
+                <p style="color: red;">сопроводительная документация</p>
+                <p style="color: green;">иная документация...</p>
+                <p style="color: red;">иная документация...</p>
+              </td>
+              <td>
+                <p style="color: green;">грузоотправитель</p>
+                <p style="color: red;">грузоотправитель</p>
+                <p style="color: green;">грузоотправитель-склад</p>
+                <p style="color: red;">грузоотправитель-склад</p>
+                <p style="color: green;">склад</p>
+                <p style="color: red;">склад</p>
+                <p style="color: green;">склад-порт</p>
+                <p style="color: red;">склад-порт</p>
+                <p style="color: green;">порт отправления</p>
+                <p style="color: red;">порт отправления</p>
+                <p style="color: green;">порт-порт</p>
+                <p style="color: red;">порт-порт</p>
+                <p style="color: green;">порт назначения</p>
+                <p style="color: red;">порт назначения</p>
+                <p style="color: green;">порт-заказчик</p>
+                <p style="color: red;">порт-заказчик</p>
+                <p style="color: green;">таможенное оформление</p>
+                <p style="color: red;">таможенное оформление</p>
+              </td>
+              <td>
+                <p>дд/мм/гг(указанна сегодняшняя дата, подсвеченная соответствующим цветом, показывающая нет ли задержек на данном этапе транспортировки)</p>
+              </td>
+            </tr>
+           </table>
       </div>
     </div>
   </div>

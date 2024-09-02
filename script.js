@@ -9,6 +9,7 @@ const CarriersBtn = document.querySelector(".carriers");
 const CustomsBtn = document.querySelector(".customs");
 const containerBnt = document.querySelector(".container");
 const profilBtn = document.querySelector(".profil");
+const monitoringBtn = document.querySelector(".monitoring");
 const contentOrders = document.querySelector(".contentOrders");
 const contentWarehouse = document.querySelector(".contentWarehouse");
 const contentCalendar = document.querySelector(".contentCalendar");
@@ -17,6 +18,7 @@ const contentCarriers = document.querySelector(".contentCarriers");
 const contentCustoms = document.querySelector(".contentCustoms");
 const contentContainer = document.querySelector(".contentContainer");
 const contentProfil = document.querySelector(".contentProfil");
+const contentMonitoring = document.querySelector(".contentMonitoring");
 
 //popup
 
@@ -123,6 +125,7 @@ ordersBtn.addEventListener("click", function (e) {
   contentCustoms.classList.add("hidden");
   contentContainer.classList.add("hidden");
   contentProfil.classList.add("hidden");
+  contentMonitoring.classList.add("hidden");
 });
 
 warehouseBtn.addEventListener("click", function (e) {
@@ -135,6 +138,7 @@ warehouseBtn.addEventListener("click", function (e) {
   contentCustoms.classList.add("hidden");
   contentContainer.classList.add("hidden");
   contentProfil.classList.add("hidden");
+  contentMonitoring.classList.add("hidden");
 });
 
 calendarBtn.addEventListener("click", function (e) {
@@ -147,6 +151,7 @@ calendarBtn.addEventListener("click", function (e) {
   contentCustoms.classList.add("hidden");
   contentContainer.classList.add("hidden");
   contentProfil.classList.add("hidden");
+  contentMonitoring.classList.add("hidden");
 });
 
 OrderHistoryBtn.addEventListener("click", function (e) {
@@ -159,6 +164,7 @@ OrderHistoryBtn.addEventListener("click", function (e) {
   contentCustoms.classList.add("hidden");
   contentContainer.classList.add("hidden");
   contentProfil.classList.add("hidden");
+  contentMonitoring.classList.add("hidden");
 });
 
 CarriersBtn.addEventListener("click", function (e) {
@@ -171,6 +177,7 @@ CarriersBtn.addEventListener("click", function (e) {
   contentCustoms.classList.add("hidden");
   contentContainer.classList.add("hidden");
   contentProfil.classList.add("hidden");
+  contentMonitoring.classList.add("hidden");
 });
 
 CustomsBtn.addEventListener("click", function (e) {
@@ -183,6 +190,7 @@ CustomsBtn.addEventListener("click", function (e) {
   contentCustoms.classList.remove("hidden");
   contentContainer.classList.add("hidden");
   contentProfil.classList.add("hidden");
+  contentMonitoring.classList.add("hidden");
 });
 
 containerBnt.addEventListener("click", function (e) {
@@ -195,6 +203,7 @@ containerBnt.addEventListener("click", function (e) {
   contentCustoms.classList.add("hidden");
   contentContainer.classList.remove("hidden");
   contentProfil.classList.add("hidden");
+  contentMonitoring.classList.add("hidden");
 });
 
 profilBtn.addEventListener("click", function (e) {
@@ -208,8 +217,22 @@ profilBtn.addEventListener("click", function (e) {
   contentCustoms.classList.add("hidden");
   contentContainer.classList.add("hidden");
   contentProfil.classList.remove("hidden");
+  contentMonitoring.classList.add("hidden");
 });
 
+monitoringBtn.addEventListener("click", function (e) {
+  contentCustoms;
+  e.preventDefault();
+  contentOrders.classList.add("hidden");
+  contentWarehouse.classList.add("hidden");
+  contentCalendar.classList.add("hidden");
+  contentOrderHistory.classList.add("hidden");
+  contentCarriers.classList.add("hidden");
+  contentCustoms.classList.add("hidden");
+  contentContainer.classList.add("hidden");
+  contentProfil.classList.add("hidden");
+  contentMonitoring.classList.remove("hidden");
+});
 //button logic
 
 showCarriersBtn.forEach((element) =>
