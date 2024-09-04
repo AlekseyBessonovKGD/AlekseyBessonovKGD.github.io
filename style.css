@@ -179,8 +179,9 @@
 .chartGoods {
   background: 
     conic-gradient(
-      red 95%, 
-      blue 0
+      red 16%, 
+      blue 0 21%,
+      orange 0
     );
   border-radius: 50%;
   width: 10%;
